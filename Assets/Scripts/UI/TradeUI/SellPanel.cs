@@ -100,7 +100,6 @@ public class SellPanel : MonoBehaviour
         tradePanel.RefreshPanels();
         SoundManager.Instance.PlayButtonClick();
         // RemoveAllItems zaten event yayýnlýyorsa RefreshCounts() otomatik tetiklenir,
-        // deðilse burada elle çaðýrýyoruz:
         RefreshCounts();
     }
 

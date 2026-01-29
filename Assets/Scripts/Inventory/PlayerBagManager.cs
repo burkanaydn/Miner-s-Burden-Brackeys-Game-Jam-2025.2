@@ -47,6 +47,5 @@ public class PlayerBagManager : MonoBehaviour
         if (evt.oreID == null) return;
 
         Debug.Log($"{evt.oreID} reddedildi!");
-        // "çöp sesi" eklenebilir
     }
 }

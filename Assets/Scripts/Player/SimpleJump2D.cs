@@ -60,7 +60,7 @@ public class SimpleJump2D : MonoBehaviour, IJumpAbility
 
         if (buffered && CanJump)
         {
-            // Y eksenini sýfýrla (daha tutarlý zýplama)
+            // Y eksenini sýfýrla 
             Vector2 v = rb.velocity;
             v.y = 0f;
             rb.velocity = v;

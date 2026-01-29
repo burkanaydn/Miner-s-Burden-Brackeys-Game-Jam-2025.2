@@ -12,10 +12,9 @@ public class PlayerCollision : MonoBehaviour
 
     private void CheckHazard(GameObject obj)
     {
-        // obj LayerMask ile Hazard layer'ýna dahil mi diye kontrol et
+
         if (((1 << obj.layer) & hazardLayer) != 0)
         {
-            // PlayerDeath event yayýnla
             EventManager.Publish(new PlayerDeathEvent());
         }
     }
@@ -23,5 +22,5 @@ public class PlayerCollision : MonoBehaviour
 
 public class PlayerDeathEvent
 {
-    // Ýhtiyaç varsa burada ek bilgiler tutulabilir
+    // ek bilgiler için.
 }

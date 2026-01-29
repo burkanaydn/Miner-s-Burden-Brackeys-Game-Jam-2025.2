@@ -39,13 +39,8 @@ public class SimpleWallGrab2D : MonoBehaviour, IWallGrabAbility
         ground = GetComponent<IGroundChecker>();
     }
 
-    /// <summary>
-    /// Called from CharacterController2D.FixedUpdate
-    /// Returns true if it consumed the jumpPressed (i.e. wall-jump performed)
-    /// </summary>
     public bool TryWallGrab(float horizontalInput, bool jumpPressed, bool jumpHeld)
     {
-        // Update ignore timer
         if (wallIgnoreTimer > 0f)
             wallIgnoreTimer -= Time.fixedDeltaTime;
 
@@ -56,7 +51,6 @@ public class SimpleWallGrab2D : MonoBehaviour, IWallGrabAbility
             return false;
         }
 
-        // Raycast setup
         Vector2 center = col.bounds.center;
         float halfWidth = col.bounds.extents.x;
         Vector2 origin = new Vector2(center.x, center.y + verticalOffset);
@@ -143,8 +137,6 @@ public class SimpleWallGrab2D : MonoBehaviour, IWallGrabAbility
         wallDir = side;
         grabTimer = 0f;
         PlayerAnimationController.Instance.SetWallGrab(true);
-        // optional: play animation / set animator param
-        // Debug.Log("Started wall grab side: " + side);
 
         simpleJump2D.ResetAirJumps();
         simpleDash2D.ResetDash();

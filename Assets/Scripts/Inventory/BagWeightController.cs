@@ -45,7 +45,6 @@ public class BagWeightController : MonoBehaviour
     private void ApplyWeight(float weightRatio)
     {
         CurrentSpeed = Mathf.Lerp(baseSpeed, baseSpeed * weighEffectMultiply, weightRatio);
-        // Ýstersen burada animasyon veya baþka sistemleri de tetikleyebilirsin
         Debug.Log($"Current Speed updated: {CurrentSpeed}");
     }
 }

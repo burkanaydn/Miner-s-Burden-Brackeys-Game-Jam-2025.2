@@ -4,8 +4,8 @@ public class KeyboardInputProvider : MonoBehaviour, IInputProvider
 {
     [SerializeField] private KeyCode jumpKey1 = KeyCode.Space;
     [SerializeField] private KeyCode jumpKey2 = KeyCode.UpArrow;
-    [SerializeField] private KeyCode dashKey = KeyCode.X; // <-- dash tuþu
-    [SerializeField] private KeyCode digKey = KeyCode.Z; // <-- dash tuþu
+    [SerializeField] private KeyCode dashKey = KeyCode.X;
+    [SerializeField] private KeyCode digKey = KeyCode.Z;
 
     public float Horizontal { get; private set; }
     public bool JumpPressed { get; private set; }

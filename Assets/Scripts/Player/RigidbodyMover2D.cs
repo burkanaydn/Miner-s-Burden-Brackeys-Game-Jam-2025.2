@@ -24,7 +24,6 @@ public class RigidbodyMover2D : MonoBehaviour, IMover
     {
         float h = Input.GetAxisRaw("Horizontal");
 
-        // Animasyon için koþma durumu
         if (Mathf.Abs(h) > 0.01f && ground.IsGrounded)
             PlayerAnimationController.Instance.SetRunning(true);
         else

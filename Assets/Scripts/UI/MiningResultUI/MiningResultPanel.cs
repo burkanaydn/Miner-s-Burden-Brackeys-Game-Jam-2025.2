@@ -19,8 +19,8 @@ public class MiningResultPanel : UIPanel
     [SerializeField] private KeyCode acceptKey = KeyCode.C;
     [SerializeField] private KeyCode rejecttKey = KeyCode.D;
 
-    private string currentOreID; // Artýk sadece ID tutuyoruz
-    private OreData currentOreData; // OreDatabase'den çekilen veri
+    private string currentOreID; 
+    private OreData currentOreData; 
 
     private void OnEnable()
     {
@@ -40,7 +40,7 @@ public class MiningResultPanel : UIPanel
 
     private void Update()
     {
-        if (!resultPanel.activeSelf) return; // panel kapalýysa bakma
+        if (!resultPanel.activeSelf) return; 
 
         if (Input.GetKeyDown(acceptKey))
         {
@@ -55,7 +55,7 @@ public class MiningResultPanel : UIPanel
     private void OnMiningResult(MiningResultEvent result)
     {
         currentOreID = result.oreID;
-        currentOreData = OreDatabase.Instance.GetOreByID(currentOreID); // Singleton'dan çekiyoruz
+        currentOreData = OreDatabase.Instance.GetOreByID(currentOreID);
 
         if (currentOreData == null)
         {

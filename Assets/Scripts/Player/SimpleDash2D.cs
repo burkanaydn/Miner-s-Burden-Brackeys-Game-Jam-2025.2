@@ -65,7 +65,6 @@ public class SimpleDash2D : MonoBehaviour, IDashAbility
         isDashing = true;
         dashTimer = dashDuration;
 
-        // Baþlangýç anýnda yatay momentumu sýfýrlayýp tutarlý dash uygulamak istersen:
         Vector2 v = rb.velocity;
         v.x = dashDirection * dashSpeed;
         rb.velocity = v;
@@ -73,27 +72,20 @@ public class SimpleDash2D : MonoBehaviour, IDashAbility
         // dash baþlama zamaný (cooldown için)
         lastDashTime = Time.time;
 
-        // isteðe baðlý: çarpýþma/yer çekimi vb. davranýþlarý buradan deðiþtirebilirsin
-        // örn: rb.gravityScale = 0; // istersen geçici olarak yerçekimini kapat
     }
 
     private void EndDash()
     {
         isDashing = false;
-        // Dash bitince yatay hýzý sýfýrlamak istersen:
         Vector2 v = rb.velocity;
         v.x = 0f;
         rb.velocity = v;
 
         PlayerAnimationController.Instance.SetJumping(true);
-
-        // Eðer gravityScale deðiþtirdiysen restore et burada
     }
 
     public void ResetDash()
     {
         lastDashTime = Time.time - dashCooldown;
     }
-
-    // Opsiyonel: dash durumunu dýþarýya gösterebilmek için event/metod ekleyebilirsin
 }

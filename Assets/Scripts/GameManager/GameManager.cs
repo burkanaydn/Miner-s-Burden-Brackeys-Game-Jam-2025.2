@@ -1,6 +1,5 @@
 using UnityEngine;
-using TMPro;  // TextMeshPro kullanacaðýmýz için ekliyoruz
-using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,7 +15,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         currentTime = gameDuration;
-        gameOverPanel.SetActive(false); // Baþlangýçta kapalý
+        gameOverPanel.SetActive(false);
 
         if(timerPanel != null)
         DoTweenUIManager.Instance.PlayAttentionLoopPop(timerPanel);
@@ -49,6 +48,6 @@ public class GameManager : MonoBehaviour
     {
         isGameOver = true;
         gameOverPanel.SetActive(true);
-        Time.timeScale = 0f; // Oyunu durdurur (istersen kaldýrabilirsin)
+        Time.timeScale = 0f;
     }
 }

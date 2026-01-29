@@ -46,8 +46,6 @@ public class GameplayPanel : MonoBehaviour
         EventManager.Subscribe<InventoryEvent.ItemRemoved>(OnItemRemoved);
         EventManager.Subscribe<InventoryEvent.AllItemsRemoved>(OnAllItemsRemoved);
 
-        // Oyuncu accept ettiðinde (ve PlayerBagManager bu ore'ü envantere ekleyecek),
-        // envanterin güncellenmiþ halini görebilmek için bir frame sonra yenileme yapýyoruz.
         EventManager.Subscribe<MiningResultEvent.OreAcceptedEvent>(OnOreAccepted);
 
         if (restartButton != null)
@@ -104,7 +102,7 @@ public class GameplayPanel : MonoBehaviour
 
     private IEnumerator DelayedRefreshNextFrame()
     {
-        yield return null; // bir frame bekle
+        yield return null;
         RefreshCounts();
     }
 
@@ -147,7 +145,6 @@ public class GameplayPanel : MonoBehaviour
             return;
         }
 
-        // Daha okunaklý bir gösterim istersen ToString("N0") kullanabilirsin
         moneyText.text = EconomyManager.Instance.CurrentMoney.ToString();
     }
 

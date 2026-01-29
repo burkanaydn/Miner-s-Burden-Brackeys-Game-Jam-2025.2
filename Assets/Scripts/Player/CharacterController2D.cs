@@ -1,9 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Bileþenleri birbirine baðlayan, SOLID’e uygun kompozisyon kontrolcüsü.
-/// Update: girdi toplar. FixedUpdate: fizik ve hareket uygular.
-/// </summary>
 [RequireComponent(typeof(Rigidbody2D))]
 public class CharacterController2D : MonoBehaviour
 {
@@ -57,7 +53,7 @@ public class CharacterController2D : MonoBehaviour
     {
         if (input == null) return;
         cachedHorizontal = input.Horizontal;
-        cachedJumpPressed = cachedJumpPressed || input.JumpPressed; // JumpPressed TRUE olursa sakla
+        cachedJumpPressed = cachedJumpPressed || input.JumpPressed; 
         cachedJumpHeld = input.JumpHeld;
         cachedDashPressed = cachedDashPressed || input.DashPressed;
     }
@@ -75,7 +71,6 @@ public class CharacterController2D : MonoBehaviour
             consumedByWall = wallGrabber.TryWallGrab(cachedHorizontal, cachedJumpPressed, cachedJumpHeld);
         }
 
-        // Eðer wall-grab jump kullanmadýysa normal jump denenir
         if (!consumedByWall)
         {
             jumper?.TryJump(cachedJumpPressed, cachedJumpHeld);
@@ -102,7 +97,6 @@ public class CharacterController2D : MonoBehaviour
             digger.TryStartDig(input.DigHeld);
             digger.UpdateDig(Time.fixedDeltaTime, input.DigHeld);
 
-            // Kazma sýrasýnda hareket engelleniyor
             if (digger.IsDigging)
             {
                 rb.velocity = Vector2.zero;

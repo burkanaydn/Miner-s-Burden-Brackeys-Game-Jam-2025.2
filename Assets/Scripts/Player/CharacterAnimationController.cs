@@ -9,7 +9,6 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void Awake()
     {
-        // Singleton yapýsý, diðer scriptlerden kolay eriþim
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);

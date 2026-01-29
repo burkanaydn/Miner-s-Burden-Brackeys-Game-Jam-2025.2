@@ -39,11 +39,6 @@ public class UpgradePanel : MonoBehaviour
     private int bagLevel;
     [SerializeField] private int bagMaxLevel = 2;
 
-    // Opsiyonel ses/geri bildirim alanlarý ekleyebilirsin
-    //[SerializeField] private AudioSource sfx;
-    //[SerializeField] private AudioClip purchaseClip;
-    //[SerializeField] private AudioClip failClip;
-
     private void Start()
     {
         RefreshPanel();
@@ -251,23 +246,15 @@ public class UpgradePanel : MonoBehaviour
     private void OnPurchaseSuccess()
     {
         // Baþarýlý satýn alým sonrasý yapýlacaklar:
-        // - Fiyatlarý tekrar getir
-        // - Para gösterimini güncelle
-        // - Ses/effect/animasyon çal (opsiyonel)
         RefreshPanel();
-        // if (sfx && purchaseClip) sfx.PlayOneShot(purchaseClip);
         Debug.Log("Purchase successful.");
     }
 
     private void OnPurchaseFailed()
     {
-        // Yetersiz para: geri bildirim ver
-        // if (sfx && failClip) sfx.PlayOneShot(failClip);
         Debug.Log("Purchase failed: not enough money.");
-        // buraya "Yetersiz para" popup/animasyon ekleyebilirsin
     }
 
-    // Opsiyonel: inspector’dan paneli açýp kapamak istersen:
     public void OpenPanel()
     {
         BindButtons();

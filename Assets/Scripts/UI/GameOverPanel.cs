@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using TMPro; // TMP namespace'i ekle
+using TMPro;
 
 public class GameOverPanel : MonoBehaviour
 {
     [SerializeField] private Button restartButton;
-    [SerializeField] private TMP_Text scoreText; // Text -> TMP_Text
+    [SerializeField] private TMP_Text scoreText;
 
     private void OnEnable()
     {

@@ -30,7 +30,6 @@ public class LevelCollider : MonoBehaviour
 
     private void OnPlayerDeath(PlayerDeathEvent e)
     {
-        // Collider içinde player var mý kontrol et
         Collider2D[] hits = Physics2D.OverlapBoxAll(col.bounds.center, col.bounds.size, 0f);
         foreach (var hit in hits)
         {
@@ -41,7 +40,7 @@ public class LevelCollider : MonoBehaviour
                     : endCheckpoint;
 
                 hit.transform.position = targetCheckpoint.position;
-                break; // sadece bir player olduðu varsayýlýyor
+                break;
             }
         }
     }

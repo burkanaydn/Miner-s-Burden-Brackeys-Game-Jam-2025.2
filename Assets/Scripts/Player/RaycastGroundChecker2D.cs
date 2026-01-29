@@ -15,7 +15,6 @@ public class RaycastGroundChecker2D : MonoBehaviour, IGroundChecker
         rb = GetComponent<Rigidbody2D>();
         if (groundCheck == null)
         {
-            // otomatik altýna küçük bir nokta ekleyelim (istersen sahnede kendin koy)
             GameObject gc = new GameObject("GroundCheck");
             gc.transform.SetParent(transform);
             gc.transform.localPosition = new Vector3(0, -0.5f, 0);
@@ -27,7 +26,6 @@ public class RaycastGroundChecker2D : MonoBehaviour, IGroundChecker
     {
         bool overlap = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundMask) != null;
 
-        // kýsa bir ray da atalým (faydalý olur)
         RaycastHit2D hit = Physics2D.Raycast(groundCheck.position, Vector2.down,
                                              checkRadius + extraRayLength, groundMask);
 
