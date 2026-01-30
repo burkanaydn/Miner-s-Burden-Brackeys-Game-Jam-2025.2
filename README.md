@@ -48,4 +48,4 @@ Proje geliştirilirken temiz kod (clean code) prensiplerine dikkat edilmiştir.
     * ScriptableObjects (Item ve veri yönetimi için)
     * Legacy Input
 
-**İletişim:** [Burkan Aydın Ağaçbüken] - [https://www.linkedin.com/in/burkan-aydin] - [burkanagacbuken8@gmail.com]
+**İletişim:** [Burkan Aydın] - [https://www.linkedin.com/in/burkan-aydin] - [burkanagacbuken8@gmail.com]
